@@ -28,18 +28,8 @@ Tech-Stack used : Node.js, React.js, Express.js, MYSQL database
 
 - ER Diagram of my database
 
-+-------------------+          +------------------+
-|      users        |          |     payments     |
-+-------------------+          +------------------+
-| id (PK)           |          | id (PK)          |
-| name              |          | userId (FK)      |
-| age               |----+-----| selectedBatch    |
-| mobileNumber      |    |     | selectedMonth    |
-+-------------------+    |     +------------------+
-                         |
-                         |
-                         |
-                         v
+![Local Image](./public/Screenshot%202023-12-20%20at%2012.23.25%E2%80%AFAM.png)
+
 
 ## images of my executions and database
 
