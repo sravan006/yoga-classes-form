@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useParams ,useNavigate} from 'react-router-dom';
-
+require('dotenv').config();
+const backendUrl = process.env.BACKEND_URL;
 
 const PaymentStatus = () => {
   const [paymentStatus, setPaymentStatus] = useState(null);
@@ -18,7 +19,7 @@ const navigate = useNavigate();
         const searchParams = new URLSearchParams(location.search);
         const paymentId = searchParams.get('paymentId');
         // console.log(paymentId);
-        const response = await axios.get(`http://localhost:3001/api/payment-status?paymentId=${paymentId}`);
+        const response = await axios.get(`${backendUrl}/api/payment-status?paymentId=${paymentId}`);
         // console.log(response)
 
         setPaymentStatus(response.data);

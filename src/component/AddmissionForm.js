@@ -4,6 +4,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios'; // Remove this line
 import '../AddmissionForm.css'; // Import the styles
 import { useNavigate } from 'react-router-dom';
+require('dotenv').config();
+const backendUrl = process.env.BACKEND_URL;
 
 
 const AdmissionForm = () => {
@@ -62,7 +64,7 @@ const AdmissionForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3001/api/submit-form', formData);
+      const response = await axios.post(`${backendUrl}/api/submit-form`, formData);
 
       setResponseMessage(response.data.message);
       // console.log(response)
